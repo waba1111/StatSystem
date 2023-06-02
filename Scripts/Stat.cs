@@ -7,12 +7,11 @@ public class Stat
     public int baseValue;
     public List<StatMod> modList;
     
-
     #endregion
 
     #region Constructors
 
-
+    
 
     #endregion
 
@@ -24,7 +23,20 @@ public class Stat
 
     #region Methods
 
+    void AddMod(StatMod mod)
+    {
+        modList.Add(mod);
+    }
+    
+    bool RemoveMod(StatMod mod)
+    {
+        return modList.Remove(mod);
+    }
 
+    void SortMods()
+    {
+        modList.Sort( (a,b) => a.modType.CompareTo(b.modType) );
+    }
 
     #endregion
 }
